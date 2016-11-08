@@ -33,13 +33,10 @@ class LocationsViewController: UIViewController, UITableViewDataSource, UITableV
                     
                     let timeInterval = Double(tmpString!)
                     let pDate = NSDate.init(timeIntervalSince1970: timeInterval!)
-                    //print(pDate.timeIntervalSinceNow)
-                    //print(pDate)
                     
                     let df = DateFormatter()
                     df.dateFormat = "Y-MM-dd H:ma"
                     let dateString = df.string(from: pDate as Date)
-                    //print(df.string(from: pDate as Date))
                     
                     let cKey = "\(lat)-\(lng)"
                     self.flyoverTimes[cKey] = dateString

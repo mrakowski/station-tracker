@@ -32,8 +32,7 @@ class EnterLocationViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addAction() {
         
-        // Convert zip to coords and save it
-        
+        // Convert zip to lat/lng coords and save it
         let geocoder = CLGeocoder.init()
         let zip = self.textField.text!
         geocoder.geocodeAddressString(zip, completionHandler: {(placemarks: [CLPlacemark]?, error: Error?) -> Void in
@@ -41,7 +40,6 @@ class EnterLocationViewController: UIViewController, UITextFieldDelegate {
             if placemarks != nil && placemarks!.count > 0 {
                 
                 let firstPlacemark = placemarks!.first!
-                //print(firstPlacemark)
                 
                 if let location = firstPlacemark.location {
                 
